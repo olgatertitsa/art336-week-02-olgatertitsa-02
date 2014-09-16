@@ -27,11 +27,115 @@ h1 {
 //p:first-of-type {
 //    @include fontSize(30px);
 //}
-
+//
 //p:first-child {
 //    @include fontSize(30px);
 //}
 
-//h1 + p {
-//   @include fontSize(24px);
-//}
+h1 + p { /*the first paragraph tag that comes immediatley after the h1 tag*/
+   @include fontSize(24px);
+}
+
+h2 {
+    @include fontSize(44px);
+    margin-top: 50px;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+}
+
+h2 + p { /*the first paragraph tag that comes immediatley after the h2 tag*/
+    margin-top: 0px;
+} 
+ 
+h3 {
+    @include fontSize(34px);
+    margin-top: 34px;
+    margin-bottom: 8px;
+}
+
+h3 + p { //the first paragraph tag that comes immediatley after the h3 tag//
+    margin-top: 0px;
+} 
+
+h4 {
+    @include fontSize(24px);
+    margin-top: 34px;
+    margin-bottom: 4px;
+}
+
+h4 + p { //the first paragraph tag that comes immediatley after the h4 tag//
+    margin-top: 0px;
+} 
+
+i, em {
+    @include body-font-italic;
+}
+
+b, strong {
+    @include body-font-bold;
+}
+
+a {
+    background-color: $background-color;
+    border-radius: 4px;
+    color: $color;
+    @include body-font-italic;
+    padding: 0 4px 2px 4px;
+    transition: background-color 300ms linear;
+    transition: color 300ms linear;
+}
+
+a:hover {
+    background-color: lighten($background-color, 5%);
+    color: lighten($color, 40%);
+    transition: background-color 300ms linear;
+    transition: color 300ms linear;
+}
+
+blockquote {
+    background-color: $background-color;
+    border-radius: 4px;
+    padding: 16px;
+    margin: 0px;
+}
+
+blockquote p:first-of-type { // first paragraph tag inside of a block quote tag //
+    margin-top: 0;
+}
+
+blockquote cite {
+    display: block;
+    @include body-font-bold;
+    text-align: right;
+}
+
+dt {
+     @include body-font-bold;
+}
+
+dd {
+    margin: 0 0 10px 0;
+}
+
+ul {
+    margin: 0 0 0 22px ;
+    //margin: top right bottom left//
+    padding: 0;
+}
+
+ul li {
+//    background-color: pink;
+//    margin-bottom: 40px;
+//    padding: 20px;
+}
+
+p + ul, p + ol { //the first unordered/ordered list that comes immediately after a paragraph tag//
+    margin-top: -15px;
+}
+
+ol {
+    margin: 0 0 0 22px;
+    padding: 0;
+    list-style-type: decimal-leading-zero;
+}
+
